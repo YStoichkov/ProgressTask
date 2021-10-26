@@ -3,12 +3,11 @@
     using System;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Mvc;
     using ProgressTask.Data.Common.Repositories;
     using ProgressTask.Data.Models;
     using ProgressTask.Services.Data;
     using ProgressTask.Web.ViewModels.Settings;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class SettingsController : BaseController
     {

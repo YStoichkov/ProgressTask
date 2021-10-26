@@ -1,8 +1,8 @@
 ﻿namespace ProgressTask.Data.Configurations
 {
-    using ProgressTask.Data.Models;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+    using ProgressTask.Data.Models;
 
     public class ApplicationUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {

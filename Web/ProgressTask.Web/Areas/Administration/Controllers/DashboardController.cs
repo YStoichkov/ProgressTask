@@ -1,9 +1,8 @@
 ﻿namespace ProgressTask.Web.Areas.Administration.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
     using ProgressTask.Services.Data;
     using ProgressTask.Web.ViewModels.Administration.Dashboard;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class DashboardController : AdministrationController
     {

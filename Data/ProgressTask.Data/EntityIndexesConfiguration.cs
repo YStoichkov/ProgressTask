@@ -2,9 +2,8 @@
 {
     using System.Linq;
 
-    using ProgressTask.Data.Common.Models;
-
     using Microsoft.EntityFrameworkCore;
+    using ProgressTask.Data.Common.Models;
 
     internal static class EntityIndexesConfiguration
     {

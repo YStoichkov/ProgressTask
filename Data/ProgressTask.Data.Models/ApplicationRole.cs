@@ -3,9 +3,8 @@ namespace ProgressTask.Data.Models
 {
     using System;
 
-    using ProgressTask.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+    using ProgressTask.Data.Common.Models;
 
     public class ApplicationRole : IdentityRole, IAuditInfo, IDeletableEntity
     {
