@@ -1,0 +1,15 @@
+﻿@model ProgressTask.Web.ViewModels.HtmlData.SingleHtmlViewModel
+
+<a href="#" class="btn btn-info btn-sm mb-3 has-icon" data-toggle="collapse" data-target=".forum-content" onclick="goBack()"><i class="fa fa-arrow-left mr-2"></i>Back</a>
+
+<p>Created on: @Model.CreatedOn</p>
+<p>Original text : @Model.OriginalText</p>
+<p>Modified on: @Model.ModifiedOn</p>
+<p>Modified text: @Model.ModifiedText</p>
+<p>Model id: @Model.Id</p>
+<a class="btn btn-danger">Check original</a>
+<script>    
+    function goBack() {
+        window.history.go(-1);
+    }
+</script>

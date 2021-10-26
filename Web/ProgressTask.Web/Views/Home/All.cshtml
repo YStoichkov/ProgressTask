@@ -1,0 +1,20 @@
+﻿@model ProgressTask.Web.ViewModels.HtmlData.HtmlDataListViewModel
+
+<section class="page-section bg-light" id="news">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">All Html Data</h2>
+            <br />
+        </div>
+        <div class="row">
+            <ul>
+                @foreach (var data in this.Model.HtmlData)
+                {
+                    <li><a asp-action="ById" asp-route-id="@data.Id"><i class="fas fa-link"></i> https://localhost:44319/@data.Id</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>
+
+<partial name="_PagingPartial" model="@Model" />

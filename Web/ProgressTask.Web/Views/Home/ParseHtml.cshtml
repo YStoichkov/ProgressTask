@@ -1,0 +1,16 @@
+﻿@model ProgressTask.Data.Models.HtmlData
+@using System.Web;
+<a href="#" class="btn btn-info btn-sm mb-3 has-icon" data-toggle="collapse" data-target=".forum-content" onclick="goBack()"><i class="fa fa-arrow-left mr-2"></i>Back</a>
+
+<div>
+    @Html.Raw(HttpUtility.HtmlDecode(@Model.OriginalText))
+</div>
+
+
+
+
+<script>
+    function goBack() {
+        window.history.go(-1);
+    }
+</script>
