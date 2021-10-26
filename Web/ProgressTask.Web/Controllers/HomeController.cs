@@ -78,6 +78,7 @@
         public IActionResult ById(string id)
         {
             var htmlModel = this.service.GetById<SingleHtmlViewModel>(id);
+
             return this.View(htmlModel);
         }
     }

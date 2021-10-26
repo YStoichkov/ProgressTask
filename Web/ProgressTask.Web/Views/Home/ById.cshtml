@@ -1,15 +1,44 @@
 ﻿@model ProgressTask.Web.ViewModels.HtmlData.SingleHtmlViewModel
+@{
+    var res = Model.ModifiedText?.Length;
+    var notModified = true;
+    if (res == null)
+    {
+        notModified = false;
+    }
+}
 
 <a href="#" class="btn btn-info btn-sm mb-3 has-icon" data-toggle="collapse" data-target=".forum-content" onclick="goBack()"><i class="fa fa-arrow-left mr-2"></i>Back</a>
+<div class="text-center" id="mainDiv">
+    <p>Created on: @Model.CreatedOn</p>
+    <p>Original text : @Model.OriginalText</p>
+    <p>Modified on: @Model.ModifiedOn</p>
+    <p>Modified text: @Model.ModifiedText</p>
+    <p>Model id: @Model.Id</p>
+    <p id="modified">Modified: @notModified</p>
+    <a class="btn btn-danger" onclick="solve(event)">Check original</a>
+</div>
 
-<p>Created on: @Model.CreatedOn</p>
-<p>Original text : @Model.OriginalText</p>
-<p>Modified on: @Model.ModifiedOn</p>
-<p>Modified text: @Model.ModifiedText</p>
-<p>Model id: @Model.Id</p>
-<a class="btn btn-danger">Check original</a>
-<script>    
+<section class="notifications" id="notModified" style="display:none">
+</section>
+
+<script>
     function goBack() {
         window.history.go(-1);
+    }
+
+    function solve(e) {
+        e.preventDefault();
+        let modifiedOrNot = document.getElementById("modified").textContent;
+        modifiedOrNot = modifiedOrNot.replace("Modified:", "").trimStart();
+        let section = document.getElementById('notModified');
+        if (modifiedOrNot == 'False') {
+            let h1 = document.createElement('h1');
+            h1.classList.add('text-center')
+            h1.textContent = 'Data is not modified...yet';
+            section.appendChild(h1);
+            section.style.display = 'block';
+            document.getElementById('mainDiv').style.display = 'none';
+        }
     }
 </script>
