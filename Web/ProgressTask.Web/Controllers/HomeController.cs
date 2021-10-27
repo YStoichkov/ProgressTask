@@ -37,6 +37,7 @@
         }
 
         [HttpPost]
+        [RequestSizeLimit(5000000)]
         public async Task<IActionResult> Create(CreateHtmlDataInputModel input)
         {
             try
@@ -80,6 +81,11 @@
             var htmlModel = this.service.GetById<SingleHtmlViewModel>(id);
 
             return this.View(htmlModel);
+        }
+
+        public IActionResult SiteError(int errorCode)
+        {
+            return this.View();
         }
     }
 }
